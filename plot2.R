@@ -10,6 +10,7 @@ Project$Date<- dmy(Project$Date)
 time <- hms(Project$Time)
 day<-Project$Date+time
 days <- as.POSIXlt(day)
+#adding column days in project data set.
 Project <- cbind(Project, days)
 write.table(Project, file="household_power_consumption.txt",sep="|",row.names=FALSE)
 
